@@ -10,7 +10,7 @@ class App extends React.Component{
 		return(
 			<React.Fragment>
 				<CssBaseline />
-					<Main />
+				<Main />
 			</React.Fragment>
 		)
 	}
