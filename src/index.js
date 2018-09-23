@@ -5,20 +5,17 @@ import { CssBaseline } from '@material-ui/core';
 
 import Main from './components/Main'
 
+import './styles.css'
+
 class App extends React.Component{
 	constructor(){
 		super()
 		this.socket = SocketIOClient('http://localhost:3000')
-		this.state = {
-			log : []
-		}
 	}
 
 	componentDidMount = () => {
 		this.socket.on('data', data => {
-			this.setState({
-				log : this.state.log.concat(data.replace(/\s+$/, ''))
-			})
+			this.mainComponent.log(data.replace(/\s+$/, ''))
 		})
 	}
 
@@ -26,7 +23,7 @@ class App extends React.Component{
 		return(
 			<React.Fragment>
 				<CssBaseline />
-				<Main log={this.state.log}/>
+				<Main ref={element=>{this.mainComponent=element}}/>
 			</React.Fragment>
 		)
 	}
