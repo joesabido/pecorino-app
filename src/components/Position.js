@@ -10,7 +10,7 @@ class Position extends React.Component{
 			positionX : '',
 			positionY : '',
 			positionZ : '',
-			speed : 3000			
+			speed : 6000			
 		}
 	}
 
@@ -20,6 +20,10 @@ class Position extends React.Component{
 
 	goHome = () => {
 		Api.put('/position/home')
+	}
+
+	goHome = () => {
+		Api.post('/position/home')
 	}
 
 	getPositionStatus = () => {
@@ -67,6 +71,9 @@ class Position extends React.Component{
 					</Grid>
 					<Grid item={true}>
 						<Button fullWidth={true} color='primary' size='small' variant='contained' onClick={this.getHomeStatus}>HOME STATUS</Button>
+					</Grid>
+					<Grid item={true}>
+						<Button fullWidth={true} color='primary' size='small' variant='contained' onClick={this.goHome}>SET AS HOME</Button>
 					</Grid>
 					<Grid item={true}>
 						<Button fullWidth={true} color='primary' size='small' variant='contained' onClick={this.goHome}>GO HOME</Button>
