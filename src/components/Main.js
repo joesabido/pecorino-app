@@ -5,6 +5,7 @@ import Motors from './Motors'
 import Pins from './Pins'
 import Port from './Port'
 import Position from './Position'
+import CustomCommandInput from './CustomCommandInput'
 
 global.basepath = 'http://localhost:3000/api'
 
@@ -30,6 +31,8 @@ class Main extends React.Component{
 		})
 	}
 
+	
+
 	render(){
 		return(
 			<React.Fragment>
@@ -48,6 +51,7 @@ class Main extends React.Component{
 							<Position />
 						</Grid>
 					</Grid>
+					<CustomCommandInput />
 					<p><Typography variant='caption'>Log:</Typography></p>
 					<textarea ref={textarea=>this.logTextarea=textarea} rows={10} style={{width:'100%', resize:'none', fontFamily:'monospace'}} value={this.state.log.join('\n')} readOnly={true}></textarea>
 					<Grid container={true} justify='flex-end'>
