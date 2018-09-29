@@ -25,6 +25,10 @@ class Port extends React.Component{
 		}
 	}
 
+	cyclePort = () => {
+		Api.post('/port/cycle')
+	}
+
 	handleChange = (e) => {
 		this.setState({
 			port : e.target.value
@@ -46,6 +50,9 @@ class Port extends React.Component{
 					</Grid>
 					<Grid item={true}>
 						<Button fullWidth={true} color='secondary' size='small' variant='contained' onClick={this.setPort}>SET</Button>
+					</Grid>
+					<Grid item={true}>
+						<Button fullWidth={true} color='secondary' size='small' variant='contained' onClick={this.cyclePort}>CYCLE</Button>
 					</Grid>
 				</Grid>
 			</Paper>
