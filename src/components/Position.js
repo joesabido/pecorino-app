@@ -22,7 +22,7 @@ class Position extends React.Component{
 		Api.put('/position/home')
 	}
 
-	goHome = () => {
+	setHome = () => {
 		Api.post('/position/home')
 	}
 
